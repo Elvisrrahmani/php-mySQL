@@ -25,6 +25,14 @@ echo $dogs[0][0]. "Origin:". $dogs[0][1]. "Life expectancy:". $dogs[0][2].  "<br
 echo $dogs[1][0]. "Origin:". $dogs[1][1]. "Life expectancy:". $dogs[1][2].  "<br>";
 echo $dogs[2][0]. "Origin:". $dogs[2][1]. "Life expectancy:". $dogs[2][2].  "<br>";
 
+for($x = 0; $x<3; $x++){
+        echo "<ul>";
+        for($y = 0; $y<3; $y++){
+            echo "<li>".$dogs[$x][$y]."</li>";
+        }
+        echo "</ul>";
+    }
+
 $phones = [
 array("Iphone 15 Pro Max", "Apple ", 1200),
 array("Samsung Galaxy S23 Ultra", "Samsung ", 1000),
@@ -40,5 +48,17 @@ for ($row = 0; $row < 3; $row++){
 }
 echo "</table>";
 
+
+$grades = [
+"Matematik" => "3",
+"Fizik" => "4",
+"Kimia" => "5",
+ "Biologji" => "2",
+];
+
+echo "Math grade is ".$grades["Matematik"]. "<br>";
+echo "Physics grade is ".$grades["Fizik"]. "<br>";
+echo "Chemistry grade is ".$grades["Kimia"]. "<br>";
+echo "Biology grade is ".$grades["Biologji"]. "<br>";
 
 ?>
