@@ -7,10 +7,13 @@ $pass = "";
 try{
 $conn = new PDO("mysql:host=$host", $user, $pass);
 
+$sql = "CREATE DATABASE testvissi";
 
-echo "Connected successfully";
+$conn->exec($sql);
+
+echo "Database created successfully";
 }catch(Exeption $e){
-    echo "Connection failed";
+    echo "Database creation failed";
 }
 
 
