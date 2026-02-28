@@ -1,4 +1,4 @@
--- SQL schema for Moduli8
+-- SQL schema 
 CREATE DATABASE IF NOT EXISTS `moduli8_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `moduli8_db`;
 
