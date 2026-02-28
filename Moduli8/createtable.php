@@ -1,9 +1,9 @@
 <?php
 
-$host = "localhost";
-$db = "testvissi";
-$user = "root";
-$pass = "";
+ $host = "localhost";
+ $db = "testvissi";
+ $user = "root";
+ $pass = "";
 
 try{
 $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
@@ -45,7 +45,7 @@ $conn->exec($sql);
 
 echo "table created successfully";
 
-}catch(Exeption $e){
+}catch(Exception $e){
 
     echo "table creation failed";
 }
