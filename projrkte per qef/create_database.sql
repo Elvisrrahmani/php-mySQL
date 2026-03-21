@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Example insert
 INSERT INTO `users` (`name`, `email`) VALUES
 ('Alice Example', 'alice@example.test'),
 ('Bob Example', 'bob@example.test')
