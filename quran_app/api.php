@@ -1,25 +1,24 @@
 <?php
+// api.php
 // Simple proxy to Quran.com API to avoid CORS issues from browser.
 // Usage:
-//  - /quran_app/api.php?endpoint=chapters
-//  - /quran_app/api.php?endpoint=verses&chapter=1
+//  - api.php?endpoint=chapters
+//  - api.php?endpoint=verses&chapter=1
 
 $endpoint = $_GET['endpoint'] ?? '';
 $base = 'https://api.quran.com/api/v4';
-
 
 if ($endpoint === 'chapters') {
     $url = "$base/chapters";
 } elseif ($endpoint === 'verses' && isset($_GET['chapter'])) {
     $chapter = intval($_GET['chapter']);
-    // request verses by chapter, only text
-    $url = "$base/verses/by_chapter/" . $chapter . "?language=en&per_page=1000&fields=text_uthmani";
+    // request verses by chapter, include text_uthmani
+    $url = "$base/verses/by_chapter/" . $chapter . "?language=en&per_page=1000&fields=text_uthmani,verse_number,chapter_number";
 } else {
     header('Content-Type: application/json');
     echo json_encode(['error' => 'Invalid endpoint']);
     exit;
 }
-
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
