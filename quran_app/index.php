@@ -116,14 +116,14 @@ function renderVerses(){
 
 
 function resolveAudioUrl(v){
-    if (!v) return null;
-    const chap = v.chapter_number || v.chapter || v.chapter_id || v.chapterId || '';
-    const aya  = v.verse_number || v.verse || v.verse_id || v.verseNumber || '';
-    if (!chap || !aya) return null;
+    if (!v || !v.verse_key) return null;
+    const [chap, aya] = v.verse_key.split(':');
     const rec = document.getElementById('reciter').value || 'afasy';
-    const sss = pad3(Number(chap));
-    const aaa = pad3(Number(aya));
-    return `audio/${rec}/${sss}${aaa}.mp3`;
+    const sss = String(chap).padStart(3, '0');
+    const aaa = String(aya).padStart(3, '0');
+    const url = `audio/${rec}/${sss}${aaa}.mp3`;
+    console.log("FIXED AUDIO URL:", url);
+    return url;
 }
 
 function wrapChars(text){
@@ -136,6 +136,7 @@ function highlightAya(index){
     const el = document.getElementById('aya-'+index);
     if (!el) return;
     el.classList.add('playing');
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 function clearCharHighlights(index){
