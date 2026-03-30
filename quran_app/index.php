@@ -33,8 +33,6 @@
             <label for="reciter">Reciter folder</label>
             <select id="reciter" style="width:220px;padding:6px">
                 <option value="afasy">afasy</option>
-                <option value="alhabib">alhabib</option>
-                <option value="custom">custom</option>
             </select>
 
             <button id="prevBtn">Prev</button>
