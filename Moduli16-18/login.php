@@ -54,7 +54,7 @@
               </div>
 
               <div class="d-grid">
-                <button type="button" class="btn btn-outline-dark btn-lg mb-2 rounded-3 d-flex align-items-center justify-content-center">
+                <button type="submit" class="btn btn-outline-dark btn-lg mb-2 rounded-3 d-flex align-items-center justify-content-center">
                   <i class="fab fa-google me-2"></i> <span class="small">Sign in with Google</span>
                 </button>
               </div>

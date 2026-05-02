@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
     $insertsql->bindParam(':username', $username);
     $insertsql->bindParam(':email', $email);
     $insertsql->bindParam(':password', $password);
-    $insertsql->bindParam(':confirm_passworde', $confirm_password);
+    $insertsql->bindParam(':confirm_password', $confirm_password);
 
     $insertsql->execute();
 
